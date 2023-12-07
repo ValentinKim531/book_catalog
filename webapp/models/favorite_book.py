@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from book import Book
+from .book import Book
 
 
 class FavoriteBook(models.Model):

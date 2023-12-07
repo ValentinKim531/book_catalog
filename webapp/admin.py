@@ -17,7 +17,7 @@ class BookAdmin(admin.ModelAdmin):
     list_display = (
         "title",
         "author",
-        "genre",
+        "display_genre",
         "description",
         "created_at"
     )
@@ -25,6 +25,11 @@ class BookAdmin(admin.ModelAdmin):
     search_fields = ("title", "author")
     fields = ("id", "title", "author", "genre", "created_at")
     readonly_fields = ("id",)
+
+    def display_genre(self, obj):
+        return ", ".join([genre.name for genre in obj.genre.all()])
+
+    display_genre.short_description = "Genre"
 
 
 class FavoriteBookAdmin(admin.ModelAdmin):

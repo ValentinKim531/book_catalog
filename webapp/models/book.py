@@ -1,6 +1,6 @@
 from django.db import models
-from author import Author
-from genre import Genre
+from .author import Author
+from .genre import Genre
 
 
 class Book(models.Model):

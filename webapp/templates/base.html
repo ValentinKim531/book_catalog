@@ -14,6 +14,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <script src="https://kit.fontawesome.com/895d06444a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -28,6 +29,30 @@
                             class="button-text-color">Add Book</a>
                     </button>
                 </li>
+
+            {% if request.user.is_authenticated %}
+
+        <li>
+          <button type="button" class="btn btn-primary button"><a href="{% url 'profile' user.pk %}" class="button-text-color">Profile
+            </a></button>
+        <l>{{ user.username }}</l>
+        <br>
+        </li>
+        <li class="nav-item">
+        {% csrf_token %}
+        <a class="icons" href="{% url 'logout' %}">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            </a>
+        </li>
+        {% else %}
+                <li><button type="button" class="btn btn-primary button"><a href="{% url 'login' %}?next={{ request.get_full_path }}"
+                            class="button-text-color">Sign in</a></button>
+                </li>
+                <li><button type="button" class="btn btn-primary button"><a href="{% url 'register' %}"
+                            class="button-text-color">Sign up</a></button>
+                </li>
+          {% endif %}
+
             </ul>
         </div>
     </nav>

@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'django_bootstrap5',
-    "webapp"
+    "django_bootstrap5",
+    "webapp",
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -106,6 +107,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
+LOGIN_URL = 'login'
+
+AUTH_USER_MODEL = 'accounts.Account'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

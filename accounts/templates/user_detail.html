@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Пользователь{% endblock %}
+
+{% block menu %}
+    <li><a href=" {% url 'change' user_obj.pk %}" class="btn btn-primary">Редактировать</a></li>
+    <li><a href="{% url "password_change" user_obj.pk %}" class="btn btn-primary">Смена пароля</a></li>
+{% endblock %}
+
+{% block content %}
+
+<main class="bg-gray-100 bg-opacity-25">
+  <div class="lg:w-8/12 lg:mx-auto mb-8">
+    <header class="flex flex-wrap items-center p-4 md:py-8">
+      <div class="w-8/12 md:w-7/12 ml-4">
+        <div class="md:flex md:flex-wrap md:items-center mb-4">
+          <h2 class="text-3xl inline-block font-light md:mr-2 mb-2 sm:mb-0">
+            {{ user_obj.username }}
+              {{ user_obj.first_name }}
+              {{ user_obj.second_name }}
+
+          </h2>
+          <span class="inline-block fas fa-certificate fa-lg text-blue-500
+                               relative mr-6  text-xl transform -translate-y-2" aria-hidden="true">
+            <i class="fas fa-check text-white text-xs absolute inset-x-0
+                               ml-1 mt-px"></i>
+          </span>
+
+      </div>
+    </header>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

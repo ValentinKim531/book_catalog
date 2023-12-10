@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Author, Book, FavoriteBook, Genre, Review
+from webapp.models import Author, Book, FavoriteBook, Genre, Review
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -23,7 +23,7 @@ class BookAdmin(admin.ModelAdmin):
     )
     list_filter = ("id", "title", "author", "genre", "created_at")
     search_fields = ("title", "author")
-    fields = ("id", "title", "author", "genre", "created_at")
+    fields = ("id", "title", "author", "description", "genre")
     readonly_fields = ("id",)
 
     def display_genre(self, obj):
@@ -62,7 +62,7 @@ class ReviewAdmin(admin.ModelAdmin):
     )
     list_filter = ("id", "book", "user", "rating")
     search_fields = ("book", "user", "rating")
-    fields = ("id", "book", "user", "rating")
+    fields = ("id", "book", "user", "rating", "text")
     readonly_fields = ("id",)
 
 

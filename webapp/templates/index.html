@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Book list</h1>
+
+<form method="get">
+    {{ filter_form.as_p }}
+    <button type="submit">Фильтровать</button>
+</form>
+
+{% for book in books %}
+<ol class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-1 me-auto">
+      <div class="fw-bold">Book title: {{ book.title }}</div>
+      <div class="fw-bold">Author: {{ book.author }}</div>
+      <div class="fw-bold">Raiting: {{ book.average_rating }}</div>
+        {% if book.id in favorite_books_ids %}
+            <span>В избранном</span>
+        {% endif %}
+
+    </div>
+    <span class="badge bg-primary rounded-pill"><a href="{% url 'book_detail' book.pk%}"
+        class="button-text-color">More
+        info..</a></span>
+
+    <span class="badge bg-primary rounded-pill"><a href="{% url 'book_update' book.pk%}"
+        class="button-text-color">Update</a></span>
+
+      <span class="badge bg-primary rounded-pill">
+      <form action="{% url 'toggle_favorite_book' book.pk %}" method="post">
+            {% csrf_token %}
+            {% if book.pk in favorite_books_ids %}
+                <input type="submit" value="Удалить из избранного">
+            {% else %}
+                <input type="submit" value="Добавить в избранное">
+            {% endif %}
+        </form>
+      </span>
+  </li>
+</ol>
+{% endfor %}
+{% if is_paginated %}
+{% include 'partial/pagination.html' %}
+{% endif %}
+{% endblock %}

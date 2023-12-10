@@ -13,6 +13,7 @@ class Review(models.Model):
             MaxValueValidator(5, message="Рейтинг не может быть больше 5")
         ])
     text = models.TextField(max_length=3000, null=True, blank=True, verbose_name="Отзыв")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
 
     def __str__(self):
         return f"{self.user.username} - {self.book.title}"

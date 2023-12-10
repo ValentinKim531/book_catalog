@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Book confirm delete{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<h1 class="title">Are you sure you want to delete this Book?</h1>
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Title: {{ book.title }}</div>
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Author: {{ book.author }}</div>
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+    <div class="fw-bold">Genre:
+        {% for genre in book.genre.all %}
+            {{ genre.name }}
+            {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </div>
+</div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Description: {{ book.description }}</div>
+        </div>
+    </li>
+
+</ul>
+<form action="{% url 'book_confirm_delete' book.pk%}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <button type="button" class="btn btn-secondary"><a href="{% url 'index' %}"
+            class="button-text-color">Cancel</a></button>
+</form>
+
+{% endblock %}

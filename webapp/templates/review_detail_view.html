@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Review detail</h1>
+
+
+<ol class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-1 me-auto">
+      <div class="fw-bold">Описание: {{ review.book }}</div>
+      <div class="fw-bold">Описание: {{ review.user }}</div>
+      <div class="fw-bold">Описание: {{ review.rating }}</div>
+      <div class="fw-bold">Описание: {{ review.text }}</div>
+      <div class="fw-bold">Описание: {{ review.created_at }}</div>
+    </div>
+      <span class="badge bg-primary rounded-pill"><a href="{% url 'review_update' review.pk%}"
+        class="button-text-color">Update</a></span>
+      <span class="badge bg-primary rounded-pill"><a href="{% url 'review_confirm_delete' review.pk%}"
+        class="button-text-color">Delete</a></span>
+  </li>
+</ol>
+{% if is_paginated %}
+{% include 'partial/pagination.html' %}
+{% endif %}
+{% endblock %}

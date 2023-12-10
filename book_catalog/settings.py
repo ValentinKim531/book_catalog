@@ -56,7 +56,7 @@ ROOT_URLCONF = "book_catalog.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
+        "DIRS": [BASE_DIR / 'webapp/templates']
         ,
         "APP_DIRS": True,
         "OPTIONS": {

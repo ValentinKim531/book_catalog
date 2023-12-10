@@ -1,14 +1,10 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.core.paginator import Paginator
-from django.db.models import Q
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.shortcuts import redirect
 from django.urls import reverse
-from django.views.generic import TemplateView, CreateView, DetailView, UpdateView, ListView
-from django.utils.http import urlencode
-from accounts.forms import LoginForm, CustomUserCreationForm, UserChangeForm, PasswordChangeForm, SearchForm
-from accounts.models import Account
+from django.views.generic import TemplateView, CreateView, DetailView, UpdateView
+from accounts.forms import LoginForm, CustomUserCreationForm, UserChangeForm, PasswordChangeForm
 
 
 class LoginView(TemplateView):

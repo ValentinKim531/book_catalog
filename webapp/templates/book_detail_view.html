@@ -27,9 +27,19 @@
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
             <div class="fw-bold">Description: {{ book.description }}</div>
-            <div class="fw-bold">Description: {{ book.average_rating }}</div>
         </div>
     </li>
+<li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Publication date: {{ book.created_at.date }}</div>
+        </div>
+    </li>
+<li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Average raiting: {{ book.average_rating }}</div>
+        </div>
+    </li>
+
 
 </ul>
 <p>
@@ -40,11 +50,10 @@
 <ol class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-1 me-auto">
-      <div class="fw-bold">Описание: {{ review.book }}</div>
-      <div class="fw-bold">Описание: {{ review.user }}</div>
-      <div class="fw-bold">Описание: {{ review.rating }}</div>
-      <div class="fw-bold">Описание: {{ review.text }}</div>
-      <div class="fw-bold">Описание: {{ review.created_at }}</div>
+      <div class="fw-bold">User: {{ review.user }}</div>
+      <div class="fw-bold">Rating: {{ review.rating }}</div>
+      <div class="fw-bold">Description: {{ review.text }}</div>
+      <div class="fw-bold">Review date: {{ review.created_at }}</div>
     </div>
     <span class="badge bg-primary rounded-pill"><a href="{% url 'review_detail' review.pk%}"
         class="button-text-color">More

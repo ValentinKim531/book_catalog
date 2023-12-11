@@ -21,20 +21,20 @@
 Чтобы запустить `приложение` локально, необходимо произвести `клонирование` себе на устройство следующей командой
 
 ```python
-   $ git clone https://github.com/ValentinKim531/book_catalog.git
+git clone https://github.com/ValentinKim531/book_catalog.git
 ```
 
 После успешного клонирования проекта, создаем и активируем `виртуальное окружение` 
 ```python
-   $ python3 -m virtualenv venv
+python3 -m virtualenv venv
 ```
 ```python
-   $ source venv/bin/activate 
+source venv/bin/activate 
 ```
 и загружаем все зависимости проекта:
 
 ```python
-   pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Затем необходимо создать `базу PostgresQL` и внести соответствующие настройки в `settings.py` в ядре проекта:
@@ -55,19 +55,19 @@
 Далее применяем `миграции` командой:
 
 ```python
-   python manage.py migrate
+python manage.py migrate
 ```
 
 `Запуск` проекта командой:
 
 ```python
-   python manage.py runserver
+python manage.py runserver
 ```
 
 Для закрузки `фикстур` проекта используем команду:
 
 ```python
-   pythin manage.py loaddata ./fixtures/fixtures.json  
+python manage.py loaddata ./fixtures/fixtures.json  
 ```
 ---
 
@@ -88,7 +88,7 @@
         <td>admin</td>
     </tr>
     <tr>
-        <td>соискателя (applicant)</td>
+        <td>пользователя (applicant)</td>
         <td>user@user.com</td>
         <td>user</td>
     </tr>
@@ -102,7 +102,7 @@
 **Контент создается через Django admin:**
 
 ```python
-   http://127.0.0.1:8000/admin
+http://127.0.0.1:8000/admin
 ```
 
 **Пользователь может:**
@@ -144,7 +144,7 @@ API приложения `Book catalog` позволяет взаимодейс�
 Для более подробной информации о API, включая параметры запросов и форматы ответов, посетите:
 
 ```python
-   http://127.0.0.1:8000/swagger/
+http://127.0.0.1:8000/swagger/
 ```
 
 

@@ -1,0 +1,410 @@
+[
+{
+  "model": "accounts.account",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$kIysMTb0vDneZ88fEflVDB$RTw7+E2BUKY2z2WBn7Y+h2A6ss4A5ChUdH/NFuy4RLQ=",
+    "last_login": "2023-12-10T23:46:35.198Z",
+    "is_superuser": true,
+    "username": "admin@admin.com",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-12-10T21:23:31.162Z",
+    "email": "admin@admin.com",
+    "first_name": "",
+    "second_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$5pjhTzKWOx4LsBoGFO0hDu$Y+ZxIC3AxH+9AwLof12VEgl52fx/Jki7zSvym/CWo7o=",
+    "last_login": "2023-12-10T23:58:26.387Z",
+    "is_superuser": false,
+    "username": "user",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-12-10T21:46:31.111Z",
+    "email": "user@user.com",
+    "first_name": "Valentin",
+    "second_name": "Kim",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "webapp.author",
+  "pk": 5,
+  "fields": {
+    "first_name": "Джордж",
+    "second_name": "Оруэлл"
+  }
+},
+{
+  "model": "webapp.author",
+  "pk": 6,
+  "fields": {
+    "first_name": "Дж К.",
+    "second_name": "Роулинг"
+  }
+},
+{
+  "model": "webapp.author",
+  "pk": 7,
+  "fields": {
+    "first_name": "Фрэнк",
+    "second_name": "Херберт"
+  }
+},
+{
+  "model": "webapp.author",
+  "pk": 8,
+  "fields": {
+    "first_name": "Лев",
+    "second_name": "Толстой"
+  }
+},
+{
+  "model": "webapp.author",
+  "pk": 9,
+  "fields": {
+    "first_name": "Харпер",
+    "second_name": "Ли"
+  }
+},
+{
+  "model": "webapp.author",
+  "pk": 10,
+  "fields": {
+    "first_name": "Федор",
+    "second_name": "Достоевский"
+  }
+},
+{
+  "model": "webapp.author",
+  "pk": 11,
+  "fields": {
+    "first_name": "Дэн",
+    "second_name": "Браун"
+  }
+},
+{
+  "model": "webapp.author",
+  "pk": 12,
+  "fields": {
+    "first_name": "Агата",
+    "second_name": "Кристи"
+  }
+},
+{
+  "model": "webapp.author",
+  "pk": 13,
+  "fields": {
+    "first_name": "Джейн",
+    "second_name": "Остин"
+  }
+},
+{
+  "model": "webapp.genre",
+  "pk": 4,
+  "fields": {
+    "name": "Дистопия"
+  }
+},
+{
+  "model": "webapp.genre",
+  "pk": 5,
+  "fields": {
+    "name": "Фэнтези"
+  }
+},
+{
+  "model": "webapp.genre",
+  "pk": 6,
+  "fields": {
+    "name": "Классика"
+  }
+},
+{
+  "model": "webapp.genre",
+  "pk": 7,
+  "fields": {
+    "name": "Триллер"
+  }
+},
+{
+  "model": "webapp.genre",
+  "pk": 8,
+  "fields": {
+    "name": "Детектив"
+  }
+},
+{
+  "model": "webapp.genre",
+  "pk": 9,
+  "fields": {
+    "name": "Роман"
+  }
+},
+{
+  "model": "webapp.book",
+  "pk": 9,
+  "fields": {
+    "title": "1984",
+    "author": 5,
+    "description": "Описание тоталитарного общества будущего",
+    "created_at": "2023-12-10T23:51:59.170Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "average_rating": 0.0,
+    "genre": [
+      4
+    ]
+  }
+},
+{
+  "model": "webapp.book",
+  "pk": 10,
+  "fields": {
+    "title": "Гарри Поттер",
+    "author": 6,
+    "description": "Приключения юного волшебника Гарри Поттера и его друзей.",
+    "created_at": "2023-12-10T23:52:45.496Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "average_rating": 0.0,
+    "genre": [
+      5
+    ]
+  }
+},
+{
+  "model": "webapp.book",
+  "pk": 11,
+  "fields": {
+    "title": "Дюна",
+    "author": 7,
+    "description": "сага о борьбе за контроль над планетой",
+    "created_at": "2023-12-10T23:53:18.963Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "average_rating": 5.0,
+    "genre": [
+      5
+    ]
+  }
+},
+{
+  "model": "webapp.book",
+  "pk": 12,
+  "fields": {
+    "title": "Война и мир",
+    "author": 8,
+    "description": "Описание жизни русского общества во время наполеоновских войн.",
+    "created_at": "2023-12-10T23:53:58.660Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "average_rating": 0.0,
+    "genre": [
+      6
+    ]
+  }
+},
+{
+  "model": "webapp.book",
+  "pk": 13,
+  "fields": {
+    "title": "Убить пересмешника",
+    "author": 9,
+    "description": "История о расизме и невиновности в маленьком городке",
+    "created_at": "2023-12-10T23:54:31.775Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "average_rating": 3.5,
+    "genre": [
+      6
+    ]
+  }
+},
+{
+  "model": "webapp.book",
+  "pk": 14,
+  "fields": {
+    "title": "Преступление и наказание",
+    "author": 10,
+    "description": "Размышления о морали, вине и искуплении",
+    "created_at": "2023-12-10T23:55:01.688Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "average_rating": 0.0,
+    "genre": [
+      6
+    ]
+  }
+},
+{
+  "model": "webapp.book",
+  "pk": 15,
+  "fields": {
+    "title": "Код да Винчи",
+    "author": 11,
+    "description": "Тайны и загадки, спрятанные в произведениях Леонардо да Винчи.",
+    "created_at": "2023-12-10T23:55:50.666Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "average_rating": 4.0,
+    "genre": [
+      7
+    ]
+  }
+},
+{
+  "model": "webapp.book",
+  "pk": 16,
+  "fields": {
+    "title": "Убийство в Восточном экспрессе",
+    "author": 12,
+    "description": "Знаменитый детектив Эркюль Пуаро расследует убийство в поезде.",
+    "created_at": "2023-12-10T23:56:42.504Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "average_rating": 2.5,
+    "genre": [
+      8
+    ]
+  }
+},
+{
+  "model": "webapp.book",
+  "pk": 17,
+  "fields": {
+    "title": "Гордость и предубеждение",
+    "author": 13,
+    "description": "Роман о манерах, браке и деньгах в английской провинции",
+    "created_at": "2023-12-10T23:57:20.906Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "average_rating": 4.5,
+    "genre": [
+      9
+    ]
+  }
+},
+{
+  "model": "webapp.favoritebook",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "book": 15
+  }
+},
+{
+  "model": "webapp.favoritebook",
+  "pk": 5,
+  "fields": {
+    "user": 2,
+    "book": 13
+  }
+},
+{
+  "model": "webapp.favoritebook",
+  "pk": 6,
+  "fields": {
+    "user": 2,
+    "book": 17
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 2,
+  "fields": {
+    "book": 17,
+    "user": 2,
+    "rating": 5,
+    "text": "Отличная книга о свободе и тоталитаризм",
+    "created_at": "2023-12-10T23:59:32.812Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 3,
+  "fields": {
+    "book": 17,
+    "user": 2,
+    "rating": 4,
+    "text": "Глубокая история, вызывающая много вопросов",
+    "created_at": "2023-12-11T00:00:39.592Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 4,
+  "fields": {
+    "book": 16,
+    "user": 2,
+    "rating": 4,
+    "text": "Захватывающее начало знаменитой серии",
+    "created_at": "2023-12-11T00:03:00.563Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 5,
+  "fields": {
+    "book": 16,
+    "user": 2,
+    "rating": 1,
+    "text": "плохой перевод в данной редакции по сравнению с оригиналом",
+    "created_at": "2023-12-11T00:04:09.878Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 6,
+  "fields": {
+    "book": 13,
+    "user": 2,
+    "rating": 5,
+    "text": "книга о настоящей смелости",
+    "created_at": "2023-12-11T00:04:36.443Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 7,
+  "fields": {
+    "book": 13,
+    "user": 2,
+    "rating": 2,
+    "text": "так себе",
+    "created_at": "2023-12-11T00:04:57.147Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 8,
+  "fields": {
+    "book": 15,
+    "user": 2,
+    "rating": 4,
+    "text": "Интеллектуальный и увлекательный",
+    "created_at": "2023-12-11T00:05:19.148Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 9,
+  "fields": {
+    "book": 11,
+    "user": 2,
+    "rating": 5,
+    "text": "Классический роман о любв",
+    "created_at": "2023-12-11T00:05:46.035Z"
+  }
+}
+]

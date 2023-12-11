@@ -1,7 +1,14 @@
 from rest_framework import viewsets
 from webapp.models import Book, Author, Genre, FavoriteBook, Review
 from accounts.models import Account
-from api.serializers import BookSerializer, AuthorSerializer, GenreSerializer, FavoriteBookSerializer, ReviewSerializer, AccountSerializer
+from api.serializers import (
+    BookSerializer,
+    AuthorSerializer,
+    GenreSerializer,
+    FavoriteBookSerializer,
+    ReviewSerializer,
+    AccountSerializer,
+)
 
 
 class BookViewSet(viewsets.ModelViewSet):

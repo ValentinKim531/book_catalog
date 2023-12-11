@@ -5,12 +5,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class ToggleFavoriteBookView(LoginRequiredMixin, View):
-
     def post(self, request, *args, **kwargs):
-        book = get_object_or_404(Book, pk=kwargs['pk'])
-        favorite, created = FavoriteBook.objects.get_or_create(user=request.user, book=book)
+        book = get_object_or_404(Book, pk=kwargs["pk"])
+        favorite, created = FavoriteBook.objects.get_or_create(
+            user=request.user, book=book
+        )
 
         if not created:
             favorite.delete()
 
-        return redirect('index')
+        return redirect("index")

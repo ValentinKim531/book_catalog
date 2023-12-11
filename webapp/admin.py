@@ -19,7 +19,7 @@ class BookAdmin(admin.ModelAdmin):
         "author",
         "display_genre",
         "description",
-        "created_at"
+        "created_at",
     )
     list_filter = ("id", "title", "author", "genre", "created_at")
     search_fields = ("title", "author")
@@ -33,10 +33,7 @@ class BookAdmin(admin.ModelAdmin):
 
 
 class FavoriteBookAdmin(admin.ModelAdmin):
-    list_display = (
-        "user",
-        "book"
-    )
+    list_display = ("user", "book")
     list_filter = ("id", "user", "book")
     search_fields = ("user", "book")
     fields = ("id", "user", "book")
@@ -44,9 +41,7 @@ class FavoriteBookAdmin(admin.ModelAdmin):
 
 
 class GenreAdmin(admin.ModelAdmin):
-    list_display = (
-        "name",
-    )
+    list_display = ("name",)
     list_filter = ("id", "name")
     search_fields = ("name",)
     fields = ("id", "name")
@@ -54,12 +49,7 @@ class GenreAdmin(admin.ModelAdmin):
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = (
-        "book",
-        "user",
-        "rating",
-        "text"
-    )
+    list_display = ("book", "user", "rating", "text")
     list_filter = ("id", "book", "user", "rating")
     search_fields = ("book", "user", "rating")
     fields = ("id", "book", "user", "rating", "text")
@@ -71,4 +61,3 @@ admin.site.register(Book, BookAdmin)
 admin.site.register(FavoriteBook, FavoriteBookAdmin)
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Review, ReviewAdmin)
-

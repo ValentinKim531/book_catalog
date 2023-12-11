@@ -3,35 +3,35 @@
 {% block menu %}
 {% endblock %}
 {% block content %}
-<h1 class="title">Are you sure you want to delete this Review?</h1>
-<ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Book: {{ review.book }}</div>
-        </div>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">User: {{ review.user }}</div>
-        </div>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-</div>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Description: {{ review.rating }}</div>
-            <div class="fw-bold">Description: {{ review.text }}</div>
-        </div>
-    </li>
+    <h1 class="title">Are you sure you want to delete this Review?</h1>
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Book: {{ review.book }}</div>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">User: {{ review.user }}</div>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Description: {{ review.rating }}</div>
+                <div class="fw-bold">Description: {{ review.text }}</div>
+            </div>
+        </li>
 
-</ul>
-<form action="{% url 'review_confirm_delete' review.pk%}" method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <button type="button" class="btn btn-secondary"><a href="{% url 'index' %}"
-            class="button-text-color">Cancel</a></button>
-</form>
+    </ul>
+    <form action="{% url 'review_confirm_delete' review.pk %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-secondary"><a href="{% url 'index' %}"
+                                                           class="button-text-color">Cancel</a></button>
+    </form>
 
 {% endblock %}

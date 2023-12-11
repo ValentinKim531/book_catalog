@@ -25,13 +25,7 @@
                             class="button-text-color">Home</a></button>
                 </li>
                 {% block menu %}{% endblock %}
-                <li><button type="button" class="btn btn-primary button"><a href="{% url 'book_add' %}"
-                            class="button-text-color">Add Book</a>
-                    </button>
-                </li>
-
             {% if request.user.is_authenticated %}
-
         <li>
           <button type="button" class="btn btn-primary button"><a href="{% url 'profile' user.pk %}" class="button-text-color">Profile
             </a></button>

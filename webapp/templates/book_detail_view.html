@@ -2,68 +2,68 @@
 {% block title %}Book view{% endblock %}
 
 {% block content %}
-<h1 class="title">Book</h1>
-<ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Title: {{ book.title }}</div>
-        </div>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Author: {{ book.author }}</div>
-        </div>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-    <div class="fw-bold">Genre:
-        {% for genre in book.genre.all %}
-            {{ genre.name }}
-            {% if not forloop.last %}, {% endif %}
-        {% endfor %}
-    </div>
-</div>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Description: {{ book.description }}</div>
-        </div>
-    </li>
-<li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Publication date: {{ book.created_at.date }}</div>
-        </div>
-    </li>
-<li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Average raiting: {{ book.average_rating }}</div>
-        </div>
-    </li>
+    <h1 class="title">Book</h1>
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Title: {{ book.title }}</div>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Author: {{ book.author }}</div>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Genre:
+                    {% for genre in book.genre.all %}
+                        {{ genre.name }}
+                        {% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Description: {{ book.description }}</div>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Publication date: {{ book.created_at.date }}</div>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Average raiting: {{ book.average_rating }}</div>
+            </div>
+        </li>
 
 
-</ul>
-<p>
-    <a href="{% url 'review_add' book.pk %}">Добавить отзыв...</a>
-</p>
+    </ul>
+    <p>
+        <a href="{% url 'review_add' book.pk %}">Добавить отзыв...</a>
+    </p>
 
-{% for review in reviews %}
-<ol class="list-group">
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-1 me-auto">
-      <div class="fw-bold">User: {{ review.user }}</div>
-      <div class="fw-bold">Rating: {{ review.rating }}</div>
-      <div class="fw-bold">Description: {{ review.text }}</div>
-      <div class="fw-bold">Review date: {{ review.created_at }}</div>
-    </div>
-    <span class="badge bg-primary rounded-pill"><a href="{% url 'review_detail' review.pk%}"
-        class="button-text-color">More
+    {% for review in reviews %}
+        <ol class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-1 me-auto">
+                    <div class="fw-bold">User: {{ review.user }}</div>
+                    <div class="fw-bold">Rating: {{ review.rating }}</div>
+                    <div class="fw-bold">Description: {{ review.text }}</div>
+                    <div class="fw-bold">Review date: {{ review.created_at }}</div>
+                </div>
+                <span class="badge bg-primary rounded-pill"><a href="{% url 'review_detail' review.pk %}"
+                                                               class="button-text-color">More
         info..</a></span>
 
-  </li>
-</ol>
-{% endfor %}
-{% if is_paginated %}
-{% include 'partial/pagination.html' %}
-{% endif %}
+            </li>
+        </ol>
+    {% endfor %}
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
 
 {% endblock %}

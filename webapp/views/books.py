@@ -9,10 +9,10 @@ class BookCreateView(CreateView):
     template_name = "book_create.html"
     model = Book
     form_class = BookForm
-    success_message = 'Book is added.'
+    success_message = "Book is added."
 
     def get_success_url(self):
-        return reverse('book_detail', kwargs={'pk': self.object.pk})
+        return reverse("book_detail", kwargs={"pk": self.object.pk})
 
     def form_valid(self, form):
         book = form.save(commit=False)
@@ -23,7 +23,7 @@ class BookCreateView(CreateView):
 class BookDetail(DetailView):
     template_name = "book_detail_view.html"
     model = Book
-    context_object_name = 'book'
+    context_object_name = "book"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -37,16 +37,14 @@ class BookUpdateView(UpdateView):
     template_name = "book_update.html"
     model = Book
     form_class = BookForm
-    success_message = 'Book is updated'
+    success_message = "Book is updated"
 
     def get_success_url(self):
-        return reverse('book_detail', kwargs={'pk': self.object.pk})
+        return reverse("book_detail", kwargs={"pk": self.object.pk})
 
 
 class BookDeleteView(DeleteView):
     template_name = "book_confirm_delete.html"
     model = Book
     success_url = reverse_lazy("index")
-    success_message = 'Book is deleted.'
-
-
+    success_message = "Book is deleted."

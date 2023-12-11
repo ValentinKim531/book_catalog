@@ -64,6 +64,13 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+`Расположение` приложения по ссылке:
+
+```python
+http://127.0.0.1:8000
+```
+
+
 Для закрузки `фикстур` проекта используем команду:
 
 ```python
